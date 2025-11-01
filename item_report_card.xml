@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_xs"
+    app:cardCornerRadius="@dimen/spacing_sm"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/surface_variant"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_category"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                app:srcCompat="@drawable/ic_road" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vía en mal estado"
+                android:textAppearance="@style/TextAppearance.TitleMedium"
+                android:textColor="@color/on_surface" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En proceso"
+                app:chipBackgroundColor="@color/secondary_200" />
+
+        </LinearLayout>
+
+        <!-- Descripción -->
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:text="Carretera principal con baches peligrosos..."
+            android:textAppearance="@style/TextAppearance.BodyMedium"
+            android:textColor="@color/on_surface_variant"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="@dimen/spacing_xs"
+                app:srcCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bogotá, Kennedy"
+                android:textAppearance="@style/TextAppearance.LabelMedium"
+                android:textColor="@color/on_surface_variant" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hace 2 días"
+                android:textAppearance="@style/TextAppearance.LabelMedium"
+                android:textColor="@color/on_surface_variant" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
