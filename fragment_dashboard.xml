@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_md"
+    android:background="@color/surface_variant">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header con Estadísticas -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/spacing_sm"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_md">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dashboard_title"
+                    android:textAppearance="@style/TextAppearance.HeadlineMedium"
+                    android:textColor="@color/on_surface" />
+
+                <!-- Stats en Grid -->
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:columnCount="2"
+                    app:rowCount="2"
+                    android:layout_marginTop="@dimen/spacing_md">
+
+                    <!-- Total Reports -->
+                    <include layout="@layout/item_stat_card"
+                        android:id="@+id/stat_total"
+                        app:statTitle="@string/stat_total"
+                        app:statValue="24"
+                        app:statIcon="@drawable/ic_report" />
+
+                    <!-- En Proceso -->
+                    <include layout="@layout/item_stat_card"
+                        android:id="@+id/stat_in_progress"
+                        app:statTitle="@string/stat_in_progress"
+                        app:statValue="12"
+                        app:statIcon="@drawable/ic_progress" />
+
+                    <!-- Resueltos -->
+                    <include layout="@layout/item_stat_card"
+                        android:id="@+id/stat_resolved"
+                        app:statTitle="@string/stat_resolved"
+                        app:statValue="8"
+                        app:statIcon="@drawable/ic_success" />
+
+                    <!-- Alertas -->
+                    <include layout="@layout/item_stat_card"
+                        android:id="@+id/stat_alerts"
+                        app:statTitle="@string/stat_alerts"
+                        app:statValue="4"
+                        app:statIcon="@drawable/ic_alert" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Acciones Rápidas -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quick_actions"
+            android:textAppearance="@style/TextAppearance.TitleLarge"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_quick_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2" />
+
+        <!-- Denuncias Recientes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recent_reports"
+            android:textAppearance="@style/TextAppearance.TitleLarge"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_reports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
